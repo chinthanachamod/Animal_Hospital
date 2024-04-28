@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.SupplierController">
+    <children>
+        <Label layoutX="88.0" layoutY="44.0" text="Supplier">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="143.0" text="Supplier ID :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="250.0" text="Name :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="356.0" text="Contact Number :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <TextField layoutX="61.0" layoutY="183.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField layoutX="60.0" layoutY="288.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField layoutX="60.0" layoutY="396.0" prefHeight="44.0" prefWidth="393.0" />
+        <JFXButton layoutX="61.0" layoutY="496.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="194.0" layoutY="496.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="457.0" layoutY="496.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="325.0" layoutY="496.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <TableView layoutX="636.0" layoutY="183.0" prefHeight="487.0" prefWidth="822.0">
+            <columns>
+                <TableColumn prefWidth="183.0" text="Supplier ID :" />
+                <TableColumn prefWidth="443.0" text="Name" />
+                <TableColumn prefWidth="195.0" text="Contact Number :" />
+            </columns>
+        </TableView>
+        <JFXButton layoutX="1310.0" layoutY="706.0" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </JFXButton>
+    </children>
+</AnchorPane>

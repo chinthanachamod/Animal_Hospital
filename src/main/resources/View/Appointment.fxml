@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.AppointmentController">
+    <children>
+        <Label layoutX="88.0" layoutY="44.0" text="Appointment">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="140.0" text="Appointment ID :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="60.0" layoutY="247.0" text="Pet Owner ID :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="687.0" layoutY="138.0" text="Date :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <TextField layoutX="61.0" layoutY="180.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField layoutX="60.0" layoutY="285.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField layoutX="687.0" layoutY="178.0" prefHeight="44.0" prefWidth="393.0" />
+        <JFXButton layoutX="1304.0" layoutY="287.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="1434.0" layoutY="287.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="1690.0" layoutY="287.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="1562.0" layoutY="287.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <TableView layoutX="60.0" layoutY="398.0" prefHeight="481.0" prefWidth="1169.0">
+            <columns>
+                <TableColumn prefWidth="202.0" text="Appointment ID " />
+                <TableColumn prefWidth="266.0" text="Date " />
+                <TableColumn prefWidth="230.0" text="Time " />
+                <TableColumn prefWidth="230.0" text="Pet Owner ID " />
+                <TableColumn prefWidth="240.0" text="Veternarian ID " />
+            </columns>
+        </TableView>
+        <JFXButton layoutX="1081.0" layoutY="936.0" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </JFXButton>
+        <TextField layoutX="687.0" layoutY="284.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField layoutX="1304.0" layoutY="177.0" prefHeight="44.0" prefWidth="393.0" />
+        <Label layoutX="1304.0" layoutY="139.0" text="Time :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="688.0" layoutY="246.0" text="Veternarian ID :">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <ImageView fitHeight="451.0" fitWidth="547.0" layoutX="1271.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/360_F_258099440_hZxmuqf431thOfiJjdi5VMsMZBz27eZe.jpg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

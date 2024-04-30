@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.SupplierController">
+<AnchorPane fx:id="MainAnchorpane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.SupplierController">
     <children>
         <Label layoutX="88.0" layoutY="44.0" text="Supplier">
             <font>
@@ -56,7 +56,7 @@
                 <TableColumn prefWidth="195.0" text="Contact Number :" />
             </columns>
         </TableView>
-        <JFXButton layoutX="1310.0" layoutY="706.0" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+        <JFXButton layoutX="1310.0" layoutY="706.0" onAction="#onSupplierBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>

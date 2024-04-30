@@ -11,7 +11,7 @@ import lk.ijse.dbConnection.DbConnection;
 public class UserVetRepo {
     public static boolean check(String username, String password) throws SQLException {
         try {
-            System.out.println("helloooo");
+            //System.out.println("helloooo");
             String sql = "SELECT yrsOfExperience FROM Veterinarian WHERE name = ?";
 
             Connection connection = DbConnection.getInstance().getConnection();

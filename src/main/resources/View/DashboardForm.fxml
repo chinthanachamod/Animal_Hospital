@@ -17,27 +17,27 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="305.0" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Home" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="305.0" onAction="#onHomeActionClick" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Home" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="404.0" prefHeight="56.0" prefWidth="206.0" ripplerFill="#0ebfda" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Pet Owner" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="404.0" onAction="#onPetOwnerActionClick" prefHeight="56.0" prefWidth="206.0" ripplerFill="#0ebfda" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Pet Owner" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="603.0" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Appointment" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="603.0" onAction="#onAppointmentActionClick" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Appointment" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="701.0" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Prescription" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="701.0" onAction="#onPrescriptionActionClick" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Prescription" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="802.0" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Medicine" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="802.0" onAction="#onMedicineActionClick" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Medicine" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font></JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="902.0" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Supplier" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="902.0" onAction="#onSupplierActionClick" prefHeight="56.0" prefWidth="206.0" ripplerFill="#00e1ff" style="-fx-background-color: #135D66; -fx-background-radius: 7;" text="Supplier" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font></JFXButton>

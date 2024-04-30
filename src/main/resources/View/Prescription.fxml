@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PrescriptionController">
+<AnchorPane fx:id="MainAnchorpane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PrescriptionController">
     <children>
         <Label layoutX="88.0" layoutY="44.0" text="Prescription">
             <font>
@@ -50,7 +50,7 @@
                 <TableColumn prefWidth="340.0" text="Diagnosis" />
             </columns>
         </TableView>
-        <JFXButton layoutX="1294.0" layoutY="786.0" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+        <JFXButton layoutX="1294.0" layoutY="786.0" onAction="#onPrescriptionBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>

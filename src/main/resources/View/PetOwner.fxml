@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1051.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PetOwnerController">
+<AnchorPane fx:id="MainAnchorpane" prefHeight="1051.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PetOwnerController">
    <children>
       <Label layoutX="53.0" layoutY="54.0" text="Pet Owner">
          <font>
@@ -63,7 +63,7 @@
             <Image url="@../image/cat-lying-down.jpg" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1382.0" layoutY="960.0" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+      <JFXButton layoutX="1382.0" layoutY="960.0" onAction="#onPetOwnerBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

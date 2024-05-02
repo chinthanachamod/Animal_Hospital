@@ -3,10 +3,7 @@ package lk.ijse.repository;
 import lk.ijse.Model.Appointment;
 import lk.ijse.dbConnection.DbConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +14,7 @@ public class AppoinmentRepo {
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setString(1, appointment.getAppId());
-        pstm.setDate(2, new java.sql.Date(appointment.getDate().getTime()));
+        pstm.setDate(2, (Date) appointment.getDate());
         pstm.setString(3, appointment.getTime());
         pstm.setString(4, appointment.getPetOwId());
         pstm.setString(5, appointment.getVetId());

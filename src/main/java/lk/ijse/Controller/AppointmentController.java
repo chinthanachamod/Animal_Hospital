@@ -23,12 +23,12 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 public class AppointmentController {
 
-    @FXML
-    private TextField txtTime;
+
 
     @FXML
     private DatePicker DatePicker;
@@ -50,7 +50,8 @@ public class AppointmentController {
 
     @FXML
     private ComboBox<String> cmbVeternarian;
-
+    @FXML
+    private TextField txtTime;
     @FXML
     private TableColumn<?, ?> colAppointmentID;
 
@@ -77,6 +78,7 @@ public class AppointmentController {
         getPetOwnerIds();
         getVeternarianIds();
         loadAllBooking();
+
     }
 
     private void setCellValueFactory() {
@@ -112,9 +114,11 @@ public class AppointmentController {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         String appId = txtAppointment.getText();
-        String time = txtTime.getText();
+        String time = String.valueOf(LocalTime.now());
         String petOwId = cmbPetOwner.getValue();
         String vetId = cmbVeternarian.getValue();
+
+        System.out.println("//////////////////////////// "+time);
 
         LocalDate selectedDate = DatePicker.getValue();
         if (selectedDate == null) {
@@ -122,15 +126,16 @@ public class AppointmentController {
             return;
         }
 
-        Date bookingDate = Date.valueOf(selectedDate);
+        Date appointmentDate = Date.valueOf(selectedDate);
 
-        Appointment appointment = new Appointment(appId, bookingDate, time, petOwId, vetId);
+        Appointment appointment = new Appointment(appId, appointmentDate, time, petOwId, vetId);
 
         try {
             boolean isAppointmentSaved = AppoinmentRepo.save(appointment);
             if (isAppointmentSaved) {
                 showAlert(Alert.AlertType.CONFIRMATION, "Booking placed successfully!");
                 loadAllBooking();
+                clearFields();
             } else {
                 showAlert(Alert.AlertType.ERROR, "Failed to save Booking!");
             }
@@ -139,18 +144,25 @@ public class AppointmentController {
         }
     }
 
+
     @FXML
     void cmbPetOwnerOnAction(ActionEvent event) {
         String id = cmbPetOwner.getValue();
         try {
-            PetOwnerRepo petOwner = PetOwnerRepo.searchById(id);
+            PetOwner petOwner = PetOwnerRepo.searchById(id);
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Error occurred while searching for showroom: " + e.getMessage());
-        }    }
+        }
+    }
 
     @FXML
     void cmbVeternarianOnAction(ActionEvent event) {
-
+        String id = cmbVeternarian.getValue();
+        try {
+            Veterinarian veterinarian = VeterinaringRepo.searchById(id);
+        } catch (SQLException e) {
+            showAlert(Alert.AlertType.ERROR, "Error occurred while searching for showroom: " + e.getMessage());
+        }
     }
 
     private void getPetOwnerIds() {
@@ -183,5 +195,67 @@ public class AppointmentController {
         Alert alert = new Alert(alertType);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public void btnUpdateOnAction(ActionEvent event) {
+        Appointment selectedAppointment = tblAppointment.getSelectionModel().getSelectedItem();
+
+        if (selectedAppointment == null) {
+            showAlert(Alert.AlertType.ERROR, "Please select a booking to update.");
+            return;
+        }
+        String time = txtTime.getText();
+
+        selectedAppointment.setTime(time);
+
+        try {
+            boolean isUpdated = AppoinmentRepo.update(selectedAppointment);
+
+            if (isUpdated) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Booking updated successfully!").show();
+                loadAllBooking();
+                clearFields();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Failed to update booking!").show();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "Error occurred while updating booking: " + e.getMessage()).show();
+        }
+
+    }
+
+    private void clearFields() {
+        txtAppointment.clear();
+        txtTime.clear();
+        cmbPetOwner.getSelectionModel().clearSelection();
+        cmbVeternarian.getSelectionModel().clearSelection();
+        DatePicker.setValue(null);
+    }
+
+    public void btnDeleteOnAction(ActionEvent event) {
+        Appointment selectedAppointment = tblAppointment.getSelectionModel().getSelectedItem();
+        if (selectedAppointment == null) {
+            new Alert(Alert.AlertType.WARNING, "Please select booking to Appointment!").show();
+            return;
+        }
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete the selected Appointment?");
+        confirmationAlert.setHeaderText(null);
+        confirmationAlert.showAndWait();
+
+        if (confirmationAlert.getResult() == ButtonType.OK) {
+            try {
+                boolean isDeleted = AppoinmentRepo.delete(selectedAppointment.getAppId());
+                if (isDeleted) {
+                    tblAppointment.getItems().remove(selectedAppointment);
+                    new Alert(Alert.AlertType.CONFIRMATION, "Appointment deleted successfully!").show();
+                    clearFields();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Failed to delete appointment: " + selectedAppointment.getAppId()).show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "Error occurred while deleting customer(s): " + e.getMessage()).show();
+            }
+        }
     }
 }

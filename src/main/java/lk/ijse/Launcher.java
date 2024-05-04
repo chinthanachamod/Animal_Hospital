@@ -18,7 +18,7 @@ public class Launcher extends Application {         // mulinma run wenn one fxml
     @Override
     public void start(Stage stage1) throws Exception {
         stage = stage1;
-        Parent rootNod = FXMLLoader.load(getClass().getResource("/View/Pet.fxml"));
+        Parent rootNod = FXMLLoader.load(getClass().getResource("/View/LoginFormController.fxml"));
         Scene loginScene = new Scene(rootNod);
         stage.setScene(loginScene);
         stage.setTitle("Login To Animal Hospital");

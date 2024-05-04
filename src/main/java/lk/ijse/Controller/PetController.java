@@ -134,7 +134,7 @@ public class PetController {
                         new Alert(Alert.AlertType.ERROR, "Failed to delete pet: " + pet.getPetId()).show();
                     }
                 }
-                new Alert(Alert.AlertType.CONFIRMATION, "pet(s) deleted successfully!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Pet(s) deleted successfully!").show();
                 clearFields();
                 loadAllPet();
                 clearFields();

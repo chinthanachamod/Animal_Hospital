@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -32,41 +32,42 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="95.0" layoutY="198.0" prefHeight="53.0" prefWidth="497.0" />
-      <TextField layoutX="95.0" layoutY="455.0" prefHeight="53.0" prefWidth="497.0" />
-      <TextField layoutX="95.0" layoutY="324.0" prefHeight="53.0" prefWidth="497.0" />
-      <JFXButton layoutX="88.0" layoutY="565.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></JFXButton>
-      <JFXButton layoutX="231.0" layoutY="565.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></JFXButton>
-      <JFXButton layoutX="489.0" layoutY="565.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></JFXButton>
-      <JFXButton layoutX="351.0" layoutY="565.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></JFXButton>
-      <TableView layoutX="677.0" layoutY="65.0" prefHeight="834.0" prefWidth="853.0">
-        <columns>
-          <TableColumn prefWidth="183.0" text="ID" />
-          <TableColumn prefWidth="397.0" text="Name" />
-            <TableColumn prefWidth="272.0" text="Contact" />
-        </columns>
+      <TextField fx:id="txtPetOwnerID" layoutX="95.0" layoutY="198.0" prefHeight="53.0" prefWidth="497.0" />
+      <TextField fx:id="txtContact" layoutX="95.0" layoutY="455.0" prefHeight="53.0" prefWidth="497.0" />
+      <TextField fx:id="txtName" layoutX="95.0" layoutY="324.0" prefHeight="53.0" prefWidth="497.0" />
+
+      <TableView fx:id="tblPetOwner" layoutX="677.0" layoutY="48.0" prefHeight="834.0" prefWidth="853.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="183.0" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="397.0" text="Name" />
+            <TableColumn fx:id="colContact" prefWidth="272.0" text="Contact" />
+         </columns>
       </TableView>
       <ImageView fitHeight="363.0" fitWidth="599.0" layoutX="53.0" layoutY="641.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/cat-lying-down.jpg" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1382.0" layoutY="960.0" onAction="#onPetOwnerBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+
+      <Button fx:id="btnSave" layoutX="95.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
          <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </JFXButton>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnBack" layoutX="1382.0" layoutY="920.0" mnemonicParsing="false" onAction="#btnBAckOnAction" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="btnUpdate" layoutX="370.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnDelete" layoutX="231.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnClear" layoutX="502.0" layoutY="550.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

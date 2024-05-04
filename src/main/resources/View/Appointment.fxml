@@ -34,6 +34,8 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+        <TextField fx:id="txtTime" layoutX="1304.0" layoutY="177.0" prefHeight="44.0" prefWidth="393.0" />
+
         <TextField fx:id="txtAppointment" layoutX="61.0" layoutY="180.0" prefHeight="44.0" prefWidth="393.0" />
         <JFXButton fx:id="btnDelete" layoutX="1304.0" layoutY="287.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
             <font>
@@ -72,13 +74,13 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-      <ImageView fitHeight="451.0" fitWidth="547.0" layoutX="1271.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/360_F_258099440_hZxmuqf431thOfiJjdi5VMsMZBz27eZe.jpg" />
-         </image>
-      </ImageView>
-      <ComboBox fx:id="cmbPetOwner" layoutX="61.0" layoutY="287.0" onAction="#cmbPetOwnerOnAction" prefHeight="44.0" prefWidth="393.0" />
-      <ComboBox fx:id="cmbVeternarian" layoutX="688.0" layoutY="287.0" onAction="#cmbVeternarianOnAction" prefHeight="44.0" prefWidth="393.0" />
-      <DatePicker fx:id="DatePicker" layoutX="687.0" layoutY="180.0" onAction="#DatePickerOnAction" prefHeight="44.0" prefWidth="393.0" />
+        <ImageView fitHeight="451.0" fitWidth="547.0" layoutX="1271.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/360_F_258099440_hZxmuqf431thOfiJjdi5VMsMZBz27eZe.jpg" />
+            </image>
+        </ImageView>
+        <ComboBox fx:id="cmbPetOwner" layoutX="61.0" layoutY="287.0" onAction="#cmbPetOwnerOnAction" prefHeight="44.0" prefWidth="393.0" />
+        <ComboBox fx:id="cmbVeternarian" layoutX="688.0" layoutY="287.0" onAction="#cmbVeternarianOnAction" prefHeight="44.0" prefWidth="393.0" />
+        <DatePicker fx:id="DatePicker" layoutX="687.0" layoutY="180.0" onAction="#DatePickerOnAction" prefHeight="44.0" prefWidth="393.0" />
     </children>
 </AnchorPane>

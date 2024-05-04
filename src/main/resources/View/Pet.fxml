@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <AnchorPane fx:id="MainAnchorpane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PetController">
     <children>
         <Label layoutX="88.0" layoutY="44.0" text="Pet">
@@ -53,7 +53,7 @@
                 <TableColumn fx:id="colPetOwnerID" prefWidth="239.0" text="Pet Owner ID :" />
             </columns>
         </TableView>
-        <JFXButton fx:id="btnBack" layoutX="1359.0" layoutY="948.0" onAction="#onPetBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+        <JFXButton fx:id="btnBack" layoutX="1004.0" layoutY="947.0" onAction="#onPetBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>

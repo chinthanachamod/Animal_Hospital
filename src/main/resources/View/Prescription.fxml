@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -25,21 +26,20 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField layoutX="61.0" layoutY="180.0" prefHeight="44.0" prefWidth="453.0" />
-        <TextField layoutX="61.0" layoutY="285.0" prefHeight="44.0" prefWidth="453.0" />
-        <JFXButton layoutX="60.0" layoutY="683.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
+        <TextField fx:id="txtPrescId" layoutX="61.0" layoutY="180.0" prefHeight="44.0" prefWidth="453.0" />
+        <JFXButton fx:id="btnClear" layoutX="60.0" layoutY="683.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton layoutX="190.0" layoutY="683.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
+        <JFXButton fx:id="btnDelete" layoutX="190.0" layoutY="683.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton layoutX="446.0" layoutY="683.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
+        <JFXButton fx:id="btnSave" layoutX="446.0" layoutY="683.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton layoutX="318.0" layoutY="683.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
+        <JFXButton fx:id="btnUpdate" layoutX="318.0" layoutY="683.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
@@ -50,16 +50,17 @@
                 <TableColumn prefWidth="340.0" text="Diagnosis" />
             </columns>
         </TableView>
-        <JFXButton layoutX="1294.0" layoutY="786.0" onAction="#onPrescriptionBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+        <JFXButton fx:id="btnPrescBack" layoutX="1294.0" layoutY="786.0" onAction="#onPrescriptionBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <TextField layoutX="61.0" layoutY="395.0" prefHeight="212.0" prefWidth="453.0" />
+        <TextField fx:id="txtPrescDiagnos" layoutX="61.0" layoutY="395.0" prefHeight="212.0" prefWidth="453.0" />
         <Label layoutX="61.0" layoutY="357.0" text="Diagnosis :">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+      <ComboBox fx:id="txtPresVetId" layoutX="60.0" layoutY="283.0" onAction="#txtPresVetIdOnAction" prefHeight="38.0" prefWidth="242.0" />
     </children>
 </AnchorPane>

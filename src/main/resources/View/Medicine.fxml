@@ -20,7 +20,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="60.0" layoutY="250.0" text="Discription :">
+        <Label layoutX="60.0" layoutY="250.0" text="Description :">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -30,26 +30,26 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField layoutX="61.0" layoutY="183.0" prefHeight="44.0" prefWidth="393.0" />
-        <TextField layoutX="60.0" layoutY="288.0" prefHeight="149.0" prefWidth="393.0" />
-        <TextField layoutX="61.0" layoutY="498.0" prefHeight="44.0" prefWidth="393.0" />
-        <JFXButton layoutX="60.0" layoutY="719.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
+        <TextField fx:id="txtMedId" layoutX="62.0" layoutY="183.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField fx:id="txtMedDesc" layoutX="60.0" layoutY="288.0" prefHeight="149.0" prefWidth="393.0" />
+        <TextField fx:id="txtMedQty" layoutX="61.0" layoutY="498.0" prefHeight="44.0" prefWidth="393.0" />
+        <JFXButton fx:id="btnClear" layoutX="60.0" layoutY="719.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton layoutX="193.0" layoutY="719.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
+        <JFXButton fx:id="btnDelete" layoutX="193.0" layoutY="719.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton layoutX="456.0" layoutY="719.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
+        <JFXButton fx:id="btnSave" layoutX="456.0" layoutY="719.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton layoutX="324.0" layoutY="719.0" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
+        <JFXButton fx:id="btnUpdate" layoutX="324.0" layoutY="719.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <TableView layoutX="636.0" layoutY="183.0" prefHeight="487.0" prefWidth="1066.0">
+        <TableView fx:id="tblMedicine" layoutX="636.0" layoutY="183.0" prefHeight="487.0" prefWidth="1066.0">
             <columns>
                 <TableColumn prefWidth="183.0" text="Medicine ID :" />
                 <TableColumn prefWidth="443.0" text="Discription :" />
@@ -57,12 +57,12 @@
                 <TableColumn prefWidth="244.0" text="Price :" />
             </columns>
         </TableView>
-        <JFXButton layoutX="1554.0" layoutY="719.0" onAction="#onMedicineBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
+        <JFXButton fx:id="btnBack" layoutX="1554.0" layoutY="719.0" onAction="#onMedicineBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <TextField layoutX="61.0" layoutY="604.0" prefHeight="44.0" prefWidth="393.0" />
+        <TextField fx:id="txtMedPrice" layoutX="61.0" layoutY="604.0" prefHeight="44.0" prefWidth="393.0" />
         <Label layoutX="61.0" layoutY="566.0" text="Price :">
             <font>
                 <Font name="System Bold" size="18.0" />

@@ -19,7 +19,7 @@ public class  MedicineRepo{
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setString(1, medicine.getMedId());
         pstm.setString(2, medicine.getDescription());
-        pstm.setString(3, medicine.getDescription());
+        pstm.setString(3, medicine.getQty());
         pstm.setString(4, String.valueOf(medicine.getPrice()));
 
         return pstm.executeUpdate() > 0;
@@ -35,7 +35,7 @@ public class  MedicineRepo{
             String medId = rs.getString(1);
             String description = rs.getString(2);
             String qty = rs.getString(3);
-            String price = rs.getString(4);
+            double price = Double.parseDouble(rs.getString(4));
 
             return new Medicine(medId, description, qty, price);
         }
@@ -73,8 +73,8 @@ public class  MedicineRepo{
             String medID = resultSet.getString(1);
             String description = resultSet.getString(2);
             String qty = resultSet.getString(3);
-            String price = resultSet.getString(4);
-            PetOwner Medicine = new Medicine(medID, description, qty, price);
+            double price = Double.parseDouble(resultSet.getString(4));
+            Medicine medicine = new Medicine(medID, description, qty, price);
             medicineList.add(medicine);
         }
         return medicineList;

@@ -43,7 +43,7 @@ public class DashboardFormController implements Initializable {
     }
 
     public void onHomeActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/DashboardForm.fxml.fxml");
+        createStageScene("/View/DashboardForm.fxml");
     }
 
     public void onPetOwnerActionClick(ActionEvent actionEvent) {
@@ -67,7 +67,7 @@ public class DashboardFormController implements Initializable {
     }
 
 
-    private void createStageScene(String path){
+    private void createStageScene(String path) {
         try {
             Parent rootNode = FXMLLoader.load(this.getClass().getResource(path));
             Scene scene = new Scene(rootNode);
@@ -80,6 +80,4 @@ public class DashboardFormController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
-
 }

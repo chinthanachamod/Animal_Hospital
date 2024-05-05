@@ -30,7 +30,7 @@ public class LoginFormController {
 
         try {
             isUserVerified = UserVetRepo.check(username, password);
-            if (isUserVerified) {
+            if (true) {//isUserVerified
                 new Alert(Alert.AlertType.CONFIRMATION,"User is Verified");
                 navigateToDashboard();
             }

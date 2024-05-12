@@ -1,8 +1,10 @@
 package lk.ijse.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,16 +23,39 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class MedicineController {
-    public AnchorPane MainAnchorpane;
-    public TextField txtMedId;
-    public TextField txtMedDesc;
-    public TextField txtMedQty;
-    public TableView<Medicine> tblMedicine;
-    public TextField txtMedPrice;
-    public TableColumn<?,?> colMed;
-    public TableColumn<?,?> colDesc;
-    public TableColumn<?,?> colQty;
-    public TableColumn<?,?> colPrice;
+    @FXML
+    private JFXButton btnUpdate;
+    @FXML
+    private JFXButton btnSave;
+    @FXML
+    private JFXButton btnDelete;
+    @FXML
+    private JFXButton btnClear;
+    @FXML
+    private JFXButton btnBack;
+    @FXML
+    private AnchorPane MainAnchorpane;
+    @FXML
+    private TextField txtMedId;
+    @FXML
+    private TextField txtMedDesc;
+    @FXML
+    private TextField txtMedQty;
+    @FXML
+    private TableView<Medicine> tblMedicine;
+    @FXML
+    private TextField txtMedPrice;
+    @FXML
+    private TableColumn<?,?>colMedid ;
+    @FXML
+    private TableColumn<?,?> colDescription;
+    @FXML
+
+    private TableColumn<?,?> colQtyOnHand;
+    @FXML
+
+    private TableColumn<?,?> colUnitPrice;
+
 
     public void initialize(){
         setCellFactory();
@@ -43,7 +68,7 @@ public class MedicineController {
             Medicine selectedItem = tblMedicine.getSelectionModel().getSelectedItem();
             txtMedId.setText(selectedItem.getMedId());
             txtMedDesc.setText(selectedItem.getDescription());
-            txtMedQty.setText(selectedItem.getQty());
+            txtMedQty.setText(String.valueOf(selectedItem.getQty()));
             txtMedPrice.setText(String.valueOf(selectedItem.getPrice()));
         });
     }
@@ -59,20 +84,22 @@ public class MedicineController {
     }
 
     private void setCellFactory() {
-        colMed.setCellValueFactory(new PropertyValueFactory<>("medId"));
-        colDesc.setCellValueFactory(new PropertyValueFactory<>("description"));
-        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
-        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        colMedid.setCellValueFactory(new PropertyValueFactory<>("medId"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
-    public void onMedicineBackClick(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void onMedicineBackClick(ActionEvent actionEvent) throws IOException {
         Parent rootNode = FXMLLoader.load(getClass().getResource("/View/DashboardForm.fxml"));
         Stage stage = (Stage) MainAnchorpane.getScene().getWindow();
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
     }
 
-    public void btnClearOnAction(ActionEvent actionEvent) {
+    @FXML
+    private void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
     }
 
@@ -83,7 +110,8 @@ public class MedicineController {
         txtMedPrice.clear();
     }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    @FXML
+    private void btnDeleteOnAction(ActionEvent actionEvent) {
         String medId = txtMedId.getText();
         try {
             boolean isDeleted = MedicineRepo.delete(medId);
@@ -100,10 +128,11 @@ public class MedicineController {
 
     }
 
-    public void btnSaveOnAction(ActionEvent actionEvent) {
+    @FXML
+    private void btnSaveOnAction(ActionEvent actionEvent) {
         String medId = txtMedId.getText();
         String medDesc = txtMedDesc.getText();
-        String medQty = txtMedQty.getText();
+        int medQty = Integer.parseInt(txtMedQty.getText());
         double medPrice = Double.parseDouble(txtMedPrice.getText());
         Medicine medicine = new Medicine(medId, medDesc, medQty, medPrice);
         try {
@@ -119,11 +148,11 @@ public class MedicineController {
             new Alert(Alert.AlertType.ERROR, "Error occurred while saving Medicine: " + e.getMessage()).show();
         }
     }
-
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
+@FXML
+    private void btnUpdateOnAction(ActionEvent actionEvent) {
         String medId = txtMedId.getText();
         String medDesc = txtMedDesc.getText();
-        String medQty = txtMedQty.getText();
+        int medQty = Integer.parseInt(txtMedQty.getText());
         double medPrice = Double.parseDouble(txtMedPrice.getText());
         Medicine medicine = new Medicine(medId, medDesc, medQty, medPrice);
         try {

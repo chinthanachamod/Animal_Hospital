@@ -10,7 +10,7 @@ import lombok.*;
 public class Medicine {
     private String medId;
     private String description;
-    private String qty;
+    private int qty;
     private Double price;
 
 

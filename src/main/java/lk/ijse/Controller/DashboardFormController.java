@@ -1,6 +1,8 @@
 package lk.ijse.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -14,10 +16,25 @@ import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class DashboardFormController implements Initializable {
+    @FXML
+    private JFXButton btnMedDetailes;
+
     public AnchorPane rootPane;
+    public AnchorPane ControlArea;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ControlArea.getChildren().removeAll();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Home.fxml"));
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
+
 
         //
         LocalDateTime time = LocalDateTime.now();
@@ -37,33 +54,61 @@ public class DashboardFormController implements Initializable {
 
     }
 
-
-    public void onPetActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/Pet.fxml");
+    @FXML
+    void btnMedDetailesOnActionClick(ActionEvent event) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/TransectionPresc.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
+    }
+    public void onPetActionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Pet.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
-    public void onHomeActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/DashboardForm.fxml");
+    public void onHomeActionClick(ActionEvent actionEvent) throws IOException {
+        ControlArea.getChildren().removeAll();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Home.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
-    public void onPetOwnerActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/PetOwner.fxml");
+    public void onPetOwnerActionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/PetOwner.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
-    public void onAppointmentActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/Appointment.fxml");
+    public void onAppointmentActionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Appointment.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
-    public void onPrescriptionActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/Prescription.fxml");
+    public void onPrescriptionActionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Prescription.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
-    public void onMedicineActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/Medicine.fxml");
+    public void onMedicineActionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Medicine.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
-    public void onSupplierActionClick(ActionEvent actionEvent) {
-        createStageScene("/View/Supplier.fxml");
+    public void onSupplierActionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/View/Supplier.fxml"));
+        AnchorPane anchorPane = loader.load();
+        ControlArea.getChildren().removeAll();
+        ControlArea.getChildren().setAll(anchorPane);
     }
 
 

@@ -19,7 +19,7 @@ public class  MedicineRepo{
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setString(1, medicine.getMedId());
         pstm.setString(2, medicine.getDescription());
-        pstm.setString(3, medicine.getQty());
+        pstm.setString(3, String.valueOf(medicine.getQty()));
         pstm.setString(4, String.valueOf(medicine.getPrice()));
 
         return pstm.executeUpdate() > 0;
@@ -34,7 +34,7 @@ public class  MedicineRepo{
         if (rs.next()) {
             String medId = rs.getString(1);
             String description = rs.getString(2);
-            String qty = rs.getString(3);
+            int qty = Integer.parseInt(rs.getString(3));
             double price = Double.parseDouble(rs.getString(4));
 
             return new Medicine(medId, description, qty, price);
@@ -47,7 +47,7 @@ public class  MedicineRepo{
         try (Connection connection = DbConnection.getInstance().getConnection();
              PreparedStatement pstm = connection.prepareStatement(sql)) {
             pstm.setString(1, medicine.getDescription());
-            pstm.setString(2, medicine.getQty());
+            pstm.setString(2, String.valueOf(medicine.getQty()));
             pstm.setString(3, String.valueOf(medicine.getPrice()));
             pstm.setString(4, medicine.getMedId());
 
@@ -72,7 +72,7 @@ public class  MedicineRepo{
         while (resultSet.next()) {
             String medID = resultSet.getString(1);
             String description = resultSet.getString(2);
-            String qty = resultSet.getString(3);
+            int qty = Integer.parseInt(resultSet.getString(3));
             double price = Double.parseDouble(resultSet.getString(4));
             Medicine medicine = new Medicine(medID, description, qty, price);
             medicineList.add(medicine);
@@ -90,5 +90,17 @@ public class  MedicineRepo{
             idList.add(id);
         }
         return idList;
+    }
+
+    public static boolean updateQty(String Id, int qty) throws SQLException {
+        String sql = "UPDATE Medicine SET qty = qty - ? WHERE medId = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setInt(1, qty);
+        pstm.setString(2, Id);
+
+        return pstm.executeUpdate() > 0;
     }
 }

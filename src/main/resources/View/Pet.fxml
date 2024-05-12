@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainAnchorpane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PetController">
+<AnchorPane fx:id="MainAnchorpane" prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PetController">
     <children>
-        <Label layoutX="88.0" layoutY="44.0" text="Pet">
+        <Label layoutX="59.0" layoutY="46.0" text="- Pet -">
             <font>
                 <Font name="System Bold" size="36.0" />
             </font>
@@ -21,36 +21,36 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="59.0" layoutY="231.0" text="Breed :">
+        <Label layoutX="1037.0" layoutY="124.0" text="Breed :">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="txtPetId" layoutX="60.0" layoutY="164.0" prefHeight="44.0" prefWidth="393.0" />
-        <TextField fx:id="txtBreed" layoutX="59.0" layoutY="269.0" prefHeight="44.0" prefWidth="393.0" />
-        <JFXButton fx:id="btnClear" layoutX="541.0" layoutY="356.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
+        <TextField fx:id="txtPetId" layoutX="59.0" layoutY="161.0" prefHeight="44.0" prefWidth="370.0" />
+        <TextField fx:id="txtBreed" layoutX="1037.0" layoutY="161.0" prefHeight="44.0" prefWidth="370.0" />
+        <JFXButton fx:id="btnClear" layoutX="1037.0" layoutY="269.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Clear">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton fx:id="btnDelete" layoutX="684.0" layoutY="356.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
+        <JFXButton fx:id="btnDelete" layoutX="1171.0" layoutY="269.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: red;" text="Delete">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton fx:id="btnSave" layoutX="942.0" layoutY="356.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
+        <JFXButton fx:id="btnSave" layoutX="1433.0" layoutY="269.0" onAction="#btnSaveOnAction" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightblue;" text="Save">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <JFXButton fx:id="btnUpdate" layoutX="804.0" layoutY="356.0" onAction="#btnUpdateOnActon" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
+        <JFXButton fx:id="btnUpdate" layoutX="1301.0" layoutY="269.0" onAction="#btnUpdateOnActon" prefHeight="44.0" prefWidth="90.0" style="-fx-background-color: lightgreen;" text="Update">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
-        <TableView fx:id="tblPet" layoutX="66.0" layoutY="454.0" prefHeight="452.0" prefWidth="1086.0">
+        <TableView fx:id="tblPet" layoutX="66.0" layoutY="454.0" prefHeight="452.0" prefWidth="1114.0">
             <columns>
-                <TableColumn fx:id="colPetID" prefWidth="181.0" text="Pet ID :" />
-                <TableColumn fx:id="colPetBreed" prefWidth="300.0" text="Breed" />
-                <TableColumn fx:id="colPetAge" prefWidth="192.0" text="Age" />
-                <TableColumn fx:id="colWeight" prefWidth="219.0" text="Weight" />
-                <TableColumn fx:id="colPetOwnerID" prefWidth="239.0" text="Pet Owner ID :" />
+                <TableColumn fx:id="colPetID" prefWidth="174.0" text="Pet ID " />
+                <TableColumn fx:id="colPetBreed" prefWidth="307.0" text="Breed" />
+                <TableColumn fx:id="colPetAge" prefWidth="179.0" text="Age" />
+                <TableColumn fx:id="colWeight" prefWidth="184.0" text="Weight" />
+                <TableColumn fx:id="colPetOwnerID" prefWidth="195.0" text="Pet Owner ID " />
             </columns>
         </TableView>
         <JFXButton fx:id="btnBack" layoutX="1004.0" layoutY="947.0" onAction="#onPetBackClick" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: #ADBC9F; -fx-background-radius: 10;" text="Back">
@@ -58,23 +58,23 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <TextField fx:id="txtWeight" layoutX="608.0" layoutY="271.0" prefHeight="44.0" prefWidth="393.0" />
-        <TextField fx:id="txtAge" layoutX="608.0" layoutY="161.0" prefHeight="44.0" prefWidth="393.0" />
-        <Label layoutX="608.0" layoutY="123.0" text="Age :">
+        <TextField fx:id="txtWeight" layoutX="59.0" layoutY="269.0" prefHeight="44.0" prefWidth="370.0" />
+        <TextField fx:id="txtAge" layoutX="548.0" layoutY="161.0" prefHeight="44.0" prefWidth="370.0" />
+        <Label layoutX="549.0" layoutY="124.0" text="Age :">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="608.0" layoutY="233.0" text="Weight :">
+        <Label layoutX="59.0" layoutY="231.0" text="Weight :">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="1146.0" layoutY="231.0" text="Pet Owner ID :">
+        <Label layoutX="549.0" layoutY="228.0" text="Pet Owner ID :">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <ComboBox fx:id="cmbPetOwnerId" layoutX="1145.0" layoutY="281.0" onAction="#cmbPetOwnerIdOnAction" prefHeight="35.0" prefWidth="190.0" />
+        <ComboBox fx:id="cmbPetOwnerId" layoutX="549.0" layoutY="266.0" onAction="#cmbPetOwnerIdOnAction" prefHeight="44.0" prefWidth="190.0" />
     </children>
 </AnchorPane>

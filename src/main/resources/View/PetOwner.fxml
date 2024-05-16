@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane fx:id="MainAnchorpane" prefHeight="1051.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PetOwnerController">
    <children>
       <Label layoutX="82.0" layoutY="48.0" text="- Pet Owner -">
@@ -32,9 +33,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtPetOwnerID" layoutX="82.0" layoutY="198.0" prefHeight="44.0" prefWidth="411.0" />
-      <TextField fx:id="txtContact" layoutX="1097.0" layoutY="198.0" prefHeight="44.0" prefWidth="411.0" />
-      <TextField fx:id="txtName" layoutX="588.0" layoutY="198.0" prefHeight="44.0" prefWidth="411.0" />
+      <JFXTextField fx:id="txtPetOwnerID" onKeyReleased="#onPetOwner" layoutX="82.0" layoutY="198.0" prefHeight="44.0" prefWidth="411.0" />
+      <JFXTextField fx:id="txtContact" onKeyReleased="#onContact" layoutX="1097.0" layoutY="198.0" prefHeight="44.0" prefWidth="411.0" />
+      <JFXTextField fx:id="txtName" onKeyReleased="#onName" layoutX="588.0" layoutY="198.0" prefHeight="44.0" prefWidth="411.0" />
 
       <TableView fx:id="tblPetOwner" layoutX="82.0" layoutY="431.0" prefHeight="407.0" prefWidth="799.0">
          <columns>

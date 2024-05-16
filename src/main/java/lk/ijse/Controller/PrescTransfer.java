@@ -1,6 +1,7 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import lk.ijse.Model.CartTm;
 import lk.ijse.Model.Medicine;
@@ -19,6 +21,8 @@ import lk.ijse.Model.petMediDetail;
 import lk.ijse.repository.MedicineRepo;
 import lk.ijse.repository.PrescMediRepo;
 import lk.ijse.repository.PrescriptionRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -69,7 +73,7 @@ public class PrescTransfer {
     private TableView<CartTm> tblPM;
 
     @FXML
-    private TextField txtQty;
+    private JFXTextField txtQty;
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
 
     public void initialize() {
@@ -242,4 +246,8 @@ public class PrescTransfer {
     void btnMedDetailesOnActionClick(ActionEvent event) {
 
     }
+    public void onQty(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.QTY, txtQty);
+    }
+
 }

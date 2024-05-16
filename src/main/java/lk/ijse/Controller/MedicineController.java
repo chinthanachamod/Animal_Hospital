@@ -1,6 +1,7 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,12 +12,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Model.Medicine;
 import lk.ijse.repository.MedicineRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -36,15 +39,15 @@ public class MedicineController {
     @FXML
     private AnchorPane MainAnchorpane;
     @FXML
-    private TextField txtMedId;
+    private JFXTextField txtMedId;
     @FXML
-    private TextField txtMedDesc;
+    private JFXTextField txtMedDesc;
     @FXML
-    private TextField txtMedQty;
+    private JFXTextField txtMedQty;
     @FXML
     private TableView<Medicine> tblMedicine;
     @FXML
-    private TextField txtMedPrice;
+    private JFXTextField txtMedPrice;
     @FXML
     private TableColumn<?,?>colMedid ;
     @FXML
@@ -148,7 +151,7 @@ public class MedicineController {
             new Alert(Alert.AlertType.ERROR, "Error occurred while saving Medicine: " + e.getMessage()).show();
         }
     }
-@FXML
+    @FXML
     private void btnUpdateOnAction(ActionEvent actionEvent) {
         String medId = txtMedId.getText();
         String medDesc = txtMedDesc.getText();
@@ -167,5 +170,21 @@ public class MedicineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Error occurred while updating Medicine: " + e.getMessage()).show();
         }
+    }
+
+    public void onPrice(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtMedPrice);
+    }
+
+    public void onMedId(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.MEDID, txtMedId);
+    }
+
+    public void onDesc(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtMedDesc);
+    }
+
+    public void onQty(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.QTY, txtMedQty);
     }
 }

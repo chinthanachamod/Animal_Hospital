@@ -12,6 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PrescTransfer">
    <children>
       <ComboBox fx:id="cmbPresc" layoutX="54.0" layoutY="185.0" onAction="#cmbPrescOnAction" prefHeight="32.0" prefWidth="262.0" promptText="Prescription ID" />
@@ -26,19 +27,19 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <TextField fx:id="txtQty" layoutX="54.0" layoutY="438.0" prefHeight="32.0" prefWidth="125.0" />
+      <JFXTextField fx:id="txtQty" onKeyReleased="#onQty" layoutX="54.0" layoutY="438.0" prefHeight="32.0" prefWidth="125.0" />
       <Label layoutX="54.0" layoutY="404.0" prefHeight="24.0" prefWidth="98.0" text="Quantity">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
       <TableView fx:id="tblPM" layoutX="54.0" layoutY="540.0" prefHeight="260.0" prefWidth="776.0">
-        <columns>
-          <TableColumn fx:id="colP_ID" prefWidth="164.0" text="Prescription ID" />
-          <TableColumn fx:id="colM_ID" prefWidth="204.0" text="Medicine ID" />
+         <columns>
+            <TableColumn fx:id="colP_ID" prefWidth="164.0" text="Prescription ID" />
+            <TableColumn fx:id="colM_ID" prefWidth="204.0" text="Medicine ID" />
             <TableColumn fx:id="colQty" prefWidth="151.0" text="Quantity" />
             <TableColumn fx:id="colAction" prefWidth="256.0" text="Action" />
-        </columns>
+         </columns>
       </TableView>
       <Label fx:id="lblMedicineQtyOnHand" layoutX="702.0" layoutY="294.0" prefHeight="32.0" prefWidth="80.0" />
       <Label layoutX="395.0" layoutY="263.0" prefHeight="24.0" prefWidth="149.0" text="Medicine Name">

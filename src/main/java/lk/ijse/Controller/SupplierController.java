@@ -1,6 +1,7 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Model.Medicine;
@@ -17,6 +19,8 @@ import lk.ijse.Model.MedicineSupplier;
 import lk.ijse.Model.Supplier;
 import lk.ijse.repository.MedicineRepo;
 import lk.ijse.repository.SupplierRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -56,13 +60,13 @@ public class SupplierController {
     private TableView<Supplier> tblSupplier;
 
     @FXML
-    private TextField txtSuppContact;
+    private JFXTextField txtSuppContact;
 
     @FXML
-    private TextField txtSuppId;
+    private JFXTextField txtSuppId;
 
     @FXML
-    private TextField txtSuppName;
+    private JFXTextField txtSuppName;
     public void initialize() {
         getMedicineID();
         setCellValueFactory();
@@ -224,5 +228,17 @@ public class SupplierController {
         Alert alert = new Alert(alertType);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public void onSupplier(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.SUPPLIER, txtSuppId);
+    }
+
+    public void onName(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME, txtSuppName);
+    }
+
+    public void onContact(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.CONTACT, txtSuppContact);
     }
 }

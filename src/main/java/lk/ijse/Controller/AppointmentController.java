@@ -1,6 +1,7 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Model.Appointment;
@@ -18,6 +20,8 @@ import lk.ijse.Model.Veterinarian;
 import lk.ijse.repository.AppoinmentRepo;
 import lk.ijse.repository.PetOwnerRepo;
 import lk.ijse.repository.VeterinaringRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -51,7 +55,7 @@ public class AppointmentController {
     @FXML
     private ComboBox<String> cmbVeternarian;
     @FXML
-    private TextField txtTime;
+    private JFXTextField txtTime;
     @FXML
     private TableColumn<?, ?> colAppointmentID;
 
@@ -71,7 +75,7 @@ public class AppointmentController {
     private TableView<Appointment> tblAppointment;
 
     @FXML
-    private TextField txtAppointment;
+    private JFXTextField txtAppointment;
 
     public void initialize() {
         setCellValueFactory();
@@ -258,4 +262,12 @@ public class AppointmentController {
             }
         }
     }
+    public void onTime(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.TIME, txtTime);
+    }
+
+    public void onAppointment(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.APPID, txtAppointment);
+    }
+
 }

@@ -1,6 +1,7 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,12 +11,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Model.Veterinarian;
 import lk.ijse.repository.PrescriptionRepo;
 import lk.ijse.Model.Prescription;
 import lk.ijse.repository.VeterinaringRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -56,10 +60,10 @@ public class PrescriptionController {
     private ComboBox<String> cmbPresVetId;
 
     @FXML
-    private TextField txtPrescDiagnos;
+    private JFXTextField txtPrescDiagnos;
 
     @FXML
-    private TextField txtPrescId;
+    private JFXTextField txtPrescId;
 
     public void initialize() throws SQLException {
         getVetIDs();
@@ -214,6 +218,14 @@ public class PrescriptionController {
         Stage stage = (Stage) MainAnchorpane.getScene().getWindow();
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
+    }
+
+    public void onPrescription(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.PRESID, txtPrescId);
+    }
+
+    public void onPrescriptionDisg(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.DESCRIPTION, txtPrescDiagnos);
     }
 
 }

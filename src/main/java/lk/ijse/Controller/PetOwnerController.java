@@ -1,5 +1,6 @@
 package lk.ijse.Controller;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,10 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Model.PetOwner;
 import lk.ijse.repository.PetOwnerRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -51,13 +55,13 @@ public class PetOwnerController {
     private TableView<PetOwner> tblPetOwner;
 
     @FXML
-    private TextField txtContact;
+    private JFXTextField txtContact;
 
     @FXML
-    private TextField txtName;
+    private JFXTextField txtName;
 
     @FXML
-    private TextField txtPetOwnerID;
+    private JFXTextField txtPetOwnerID;
 
     public void initialize() {
         setCellValueFactory();
@@ -201,5 +205,16 @@ public class PetOwnerController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Error occurred while updating PetOwner: " + e.getMessage()).show();
         }
+    }
+    public void onPetOwner(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.POID, txtPetOwnerID);
+    }
+
+    public void onContact(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.CONTACT, txtContact);
+    }
+
+    public void onName(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.NAME, txtName);
     }
 }

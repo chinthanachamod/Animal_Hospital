@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane fx:id="MainAnchorpane" prefHeight="1080.0" prefWidth="1572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.SupplierController">
     <children>
         <Label layoutX="88.0" layoutY="44.0" text="- Supplier -">
@@ -33,9 +34,9 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="txtSuppId" layoutX="61.0" layoutY="183.0" prefHeight="44.0" prefWidth="292.0" />
-        <TextField fx:id="txtSuppName" layoutX="843.0" layoutY="184.0" prefHeight="44.0" prefWidth="292.0" />
-        <TextField fx:id="txtSuppContact" layoutX="62.0" layoutY="301.0" prefHeight="44.0" prefWidth="292.0" />
+        <JFXTextField fx:id="txtSuppId" onKeyReleased="#onSupplier" layoutX="61.0" layoutY="183.0" prefHeight="44.0" prefWidth="292.0" />
+        <JFXTextField fx:id="txtSuppName" onKeyReleased="#onName" layoutX="843.0" layoutY="184.0" prefHeight="44.0" prefWidth="292.0" />
+        <JFXTextField fx:id="txtSuppContact" onKeyReleased="#onContact" layoutX="62.0" layoutY="301.0" prefHeight="44.0" prefWidth="292.0" />
         <JFXButton fx:id="btnClear" layoutX="495.0" layoutY="301.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="148.0" style="-fx-background-color: yellow;" text="Clear">
             <font>
                 <Font name="System Bold" size="14.0" />
@@ -70,25 +71,25 @@
             </font>
         </Label>
         <ComboBox fx:id="cmbMedId" layoutX="495.0" layoutY="184.0" onAction="#cmbMedIdOnAction" prefHeight="44.0" prefWidth="205.0" />
-      <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="502.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/Clear.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="1111.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/Save.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="910.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/Update.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="709.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../image/Delete.png" />
-         </image>
-      </ImageView>
+        <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="502.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/Clear.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="1111.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/Save.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="910.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/Update.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="35.0" fitWidth="29.0" layoutX="709.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../image/Delete.png" />
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>

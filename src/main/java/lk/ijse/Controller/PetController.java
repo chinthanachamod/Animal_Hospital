@@ -1,6 +1,7 @@
 package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,12 +11,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.Model.Pet;
 import lk.ijse.Model.PetOwner;
 import lk.ijse.repository.PetOwnerRepo;
 import lk.ijse.repository.petRepo;
+import lk.ijse.util.Regex;
+import lk.ijse.util.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -25,16 +29,16 @@ public class PetController {
 
     public AnchorPane MainAnchorpane;
     @FXML
-    private TextField txtPetId;
+    private JFXTextField txtPetId;
 
     @FXML
-    private TextField txtBreed;
+    private JFXTextField txtBreed;
 
     @FXML
-    private TextField txtWeight;
+    private JFXTextField txtWeight;
 
     @FXML
-    private TextField txtAge;
+    private JFXTextField txtAge;
 
     @FXML
     private ComboBox<String> cmbPetOwnerId;
@@ -237,6 +241,22 @@ public class PetController {
         txtBreed.clear();
         txtPetId.clear();
         txtWeight.clear();
+    }
+
+    public void onPetId(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PID, txtPetId);
+    }
+
+    public void onBreed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtBreed);
+    }
+
+    public void onWeight(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtWeight);
+    }
+
+    public void onAge(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.QTY, txtAge);
     }
 
 }
